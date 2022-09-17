@@ -8,7 +8,6 @@ import {
   MenuList,
   Paper,
   Popper,
-  Typography,
 } from "@mui/material";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import DashboardIcon from "@mui/icons-material/Dashboard";
@@ -145,13 +144,13 @@ const UserOptions = ({ user }) => {
 
                   {options.map((itm) => (
                     <MenuItem key={itm.name} onClick={handleProfileClose}>
-                      <Typography
+                      <p
                         textAlign="center"
                         className="flex items-center w-full"
                         onClick={itm.func}
                       >
                         {itm.icon} <span className="ml-4"> {itm.name}</span>
-                      </Typography>
+                      </p>
                     </MenuItem>
                   ))}
                 </MenuList>
