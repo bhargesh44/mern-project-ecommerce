@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  @apply bg-colorWhite text-colorStone;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-colorBlack;
+}
+
+.container {
+  @apply w-[95%] max-w-[1246px] 2xl:max-w-[1536px] mx-auto;
+}
+.footer-link:hover path {
+  transition: fill 0.3s;
+  fill: #eb4034;
+}
+
+.MuiDataGrid-iconSeparator {
+  display: none !important;
+}
+.MuiPopover-paper {
+  max-height: 25% !important;
+}
+.MuiTypography-root {
+  background-color: #fff !important;
+}
+.MuiTreeItem-label {
+  font-weight: 600 !important;
+}
