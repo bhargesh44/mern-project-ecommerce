@@ -40,7 +40,7 @@ const UpdateProduct = () => {
     error: updateError,
     isUpdated,
   } = useSelector((state) => state.product);
-  console.log(imagesPreview);
+
   const navigate = useNavigate();
   const {
     register,
@@ -141,7 +141,7 @@ const UpdateProduct = () => {
 
   return (
     <>
-      <MetaData title="Create Product" />
+      <MetaData title="Update Product" />
 
       <div className="grid grid-cols-5">
         <div className="col-span-1 hidden lg:block">
