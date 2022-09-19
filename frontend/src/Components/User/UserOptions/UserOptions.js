@@ -145,8 +145,7 @@ const UserOptions = ({ user }) => {
                   {options.map((itm) => (
                     <MenuItem key={itm.name} onClick={handleProfileClose}>
                       <p
-                        textAlign="center"
-                        className="flex items-center w-full"
+                        className="flex items-center w-full text-center"
                         onClick={itm.func}
                       >
                         {itm.icon} <span className="ml-4"> {itm.name}</span>

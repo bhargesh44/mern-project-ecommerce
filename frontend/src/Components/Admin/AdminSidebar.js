@@ -46,8 +46,8 @@ const AdminSidebar = () => {
       </div>
 
       <div
-        className={`${setActiveLink(
-          "/admin/orders"
+        className={`${setActiveLink("/admin/orders")} ${setActiveLink(
+          `/admin/order/${id}`
         )} text-[#0000007e] font-semibold p-4 hover:text-[tomato] hover:scale-110`}
         style={{ transition: "all 0.5s" }}
         onClick={() => navigate("/admin/orders")}
@@ -58,8 +58,8 @@ const AdminSidebar = () => {
         </p>
       </div>
       <div
-        className={`${setActiveLink(
-          "/admin/users"
+        className={`${setActiveLink("/admin/users")} ${setActiveLink(
+          `/admin/user/${id}`
         )} text-[#0000007e] font-semibold p-4 hover:text-[tomato] hover:scale-110`}
         style={{ transition: "all 0.5s" }}
         onClick={() => navigate("/admin/users")}

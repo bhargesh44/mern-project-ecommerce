@@ -32,6 +32,13 @@ import Dashboard from "./Components/Admin/Dashboard";
 import ProductList from "./Components/Admin/ProductList";
 import NewProduct from "./Components/Admin/NewProduct";
 import UpdateProduct from "./Components/Admin/UpdateProduct";
+import OrderList from "./Components/Admin/OrderList";
+import ProcessOrder from "./Components/Admin/ProcessOrder";
+import UsersList from "./Components/Admin/UsersList";
+import UpdateUser from "./Components/Admin/UpdateUser";
+import ProductReviews from "./Components/Admin/ProductReviews";
+import Contact from "./Components/Layout/Contact";
+import About from "./Components/Layout/About";
 
 const theme = createTheme({
   palette: {
@@ -81,6 +88,8 @@ function App() {
             <Route exact path="/product/:id" element={<ProductDetails />} />
             <Route exact path="/products" element={<Products />} />
             <Route exact path="/cart" element={<Cart />} />
+            <Route exact path="/contact" element={<Contact />} />
+            <Route exact path="/about" element={<About />} />
 
             <Route
               exact
@@ -175,6 +184,56 @@ function App() {
               element={
                 <ProtectedRoute isAdmin={true}>
                   <UpdateProduct />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              exact
+              path="/admin/orders"
+              element={
+                <ProtectedRoute isAdmin={true}>
+                  <OrderList />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              exact
+              path="/admin/order/:id"
+              element={
+                <ProtectedRoute isAdmin={true}>
+                  <ProcessOrder />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              exact
+              path="/admin/users"
+              element={
+                <ProtectedRoute isAdmin={true}>
+                  <UsersList />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              exact
+              path="/admin/user/:id"
+              element={
+                <ProtectedRoute isAdmin={true}>
+                  <UpdateUser />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              exact
+              path="/admin/reviews"
+              element={
+                <ProtectedRoute isAdmin={true}>
+                  <ProductReviews />
                 </ProtectedRoute>
               }
             />
