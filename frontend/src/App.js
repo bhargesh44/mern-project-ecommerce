@@ -39,6 +39,7 @@ import UpdateUser from "./Components/Admin/UpdateUser";
 import ProductReviews from "./Components/Admin/ProductReviews";
 import Contact from "./Components/Layout/Contact";
 import About from "./Components/Layout/About";
+import PageNotFound from "./Components/Layout/PageNotFound";
 
 const theme = createTheme({
   palette: {
@@ -61,7 +62,7 @@ function App() {
     store.dispatch(loadUser());
     getStripeApiKey();
   }, []);
-
+  console.log(window.location.pathname === "/process/payment");
   return (
     <ThemeProvider theme={theme}>
       <Router>
@@ -108,14 +109,6 @@ function App() {
                 <ProtectedRoute>
                   <ConfirmOrder />
                 </ProtectedRoute>
-              }
-            />
-
-            <Route
-              element={
-                window.location.pathname === "/process/payment"
-                  ? null
-                  : "NotFound"
               }
             />
 
@@ -277,6 +270,17 @@ function App() {
                 <ProtectedRoute>
                   <UpdatePassword />
                 </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path={`${
+                window.location.pathname !== "/process/payment" && "/*"
+              }`}
+              element={
+                window.location.pathname === "/process/payment" ? null : (
+                  <PageNotFound />
+                )
               }
             />
           </Routes>
