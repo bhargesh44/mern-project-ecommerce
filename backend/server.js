@@ -46,8 +46,8 @@ app.use("/api/v1", order);
 app.use("/api/v1", payment);
 
 if (
-  process.env.NODE_ENV === "production" ||
-  process.env.NODE_ENV === "staging"
+  process.env.NODE_ENV === "PRODUCTION" ||
+  process.env.NODE_ENV === "STAGING"
 ) {
   app.use(express.static(path.join(__dirname, "../frontend/build")));
 
